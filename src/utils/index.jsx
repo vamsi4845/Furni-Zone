@@ -1,18 +1,18 @@
-import axios from 'axios';
+import axios from "axios";
 
-const productionUrl = 'https://strapi-store-server.onrender.com/api';
+const productionUrl = "https://strapi-store-server.onrender.com/api";
 
 export const customFetch = axios.create({
   baseURL: productionUrl,
 });
 
 export const formatPrice = (price) => {
-  const dollarsAmount = new Intl.NumberFormat("en-US", {
+  const rupeesAmount = new Intl.NumberFormat("en-IN", {
     style: "currency",
-    currency: "USD",
+    currency: "INR",
   }).format((price / 100).toFixed(2));
-  return dollarsAmount;
-}
+  return rupeesAmount;
+};
 
 export const generateAmountOptions = (number) => {
   return Array.from({ length: number }, (_, index) => {
@@ -22,6 +22,6 @@ export const generateAmountOptions = (number) => {
       <option key={amount} value={amount}>
         {amount}
       </option>
-    )
-  })
-}
+    );
+  });
+};

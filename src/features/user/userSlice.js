@@ -24,7 +24,7 @@ const initialState = {
 
 const userSlice = createSlice({
     name: "user",
-    state: initialState,
+    initialState,
     reducers: {
         loginUser: (state, action) => {
             const user = { ...action.payload.user, token: action.payload.jwt };

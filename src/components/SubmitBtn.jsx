@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNavigation } from "react-router-dom";
 
 const SubmitBtn = ({ text }) => {
@@ -7,7 +6,7 @@ const SubmitBtn = ({ text }) => {
   return (
     <button
       type="submit"
-      className="btn btn-primary btn-block"
+      className="btn btn-primary btn-block capitalize"
       disabled={isSubmitting}
     >
       {isSubmitting ? (
