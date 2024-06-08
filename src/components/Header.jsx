@@ -24,19 +24,22 @@ const Header = () => {
             <p className="text-xs sm:text-sm">Hello, {user.username}</p>
             <button
               onClick={handleLogout}
-              className="btn btn-xs btn-outline btn-primary"
+              className="btn btn-xs font-bold btn-outline btn-primary"
             >
-              logout
+              Sign out
             </button>
           </div>
         ) : (
           <div className="flex gap-x-6 justify-center items-center">
-            <Link to="/login" className="link link-hover text-xs sm:text-sm">
-              "Sign in / Guest"
+            <Link
+              to="/login"
+              className="link link-hover font-bold text-xs sm:text-sm"
+            >
+              Sign in / Guest
             </Link>
-            <Link to="/register" className="link link-hover text-xs sm:text0sm">
-              Create and Account
-            </Link>
+            {/* <Link to="/register" className="link link-hover text-xs sm:text0sm">
+              Create Account
+            </Link> */}
           </div>
         )}
       </div>

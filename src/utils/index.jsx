@@ -7,11 +7,13 @@ export const customFetch = axios.create({
 });
 
 export const formatPrice = (price) => {
-  const rupeesAmount = new Intl.NumberFormat("en-IN", {
+  const dollarsAmount = new Intl.NumberFormat("en-IN", {
     style: "currency",
     currency: "INR",
-  }).format((price / 100).toFixed(2));
-  return rupeesAmount;
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(Math.floor((price / 100).toFixed(2)) * 85);
+  return dollarsAmount;
 };
 
 export const generateAmountOptions = (number) => {

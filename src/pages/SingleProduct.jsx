@@ -119,7 +119,7 @@ const SingleProduct = () => {
           {/* CART BTN */}
           <div className="mt-10">
             <button className="btn btn-secondary btn-md" onClick={addToCart}>
-              Add to bag
+              ADD TO BAG
             </button>
           </div>
         </div>

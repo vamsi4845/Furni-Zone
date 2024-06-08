@@ -5,6 +5,7 @@ import NavLinks from "./NavLinks";
 
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../features/user/userSlice";
+import { LuSofa } from "react-icons/lu";
 
 const Navbar = () => {
   const numItemsInCart = useSelector((state) => state.cartState.numItemsInCart);
@@ -20,9 +21,10 @@ const Navbar = () => {
           {/* Title */}
           <NavLink
             to="/"
-            className="hidden lg:flex btn btn-primary text-3xl items-center "
+            className="hidden lg:flex btn btn-primary text-2xl items-center "
           >
-            C
+            <LuSofa className="h-7 w-7" />
+            Furni Zone
           </NavLink>
           {/* DROPDOWN */}
           <div className="dropdown">
