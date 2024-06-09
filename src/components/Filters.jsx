@@ -12,8 +12,8 @@ const Filters = () => {
         type="search"
         label="search product"
         name="search"
-        defaultValue={search}
         size="input-sm"
+        defaultValue={search}
       />
       <FormSelect
         label="select category"
@@ -37,24 +37,22 @@ const Filters = () => {
         size="select-sm"
       />
       <FormRange
-        label="select price"
         name="price"
-        price={price}
+        label="select price"
         size="range-sm"
+        price={price}
       />
-      ;
       <FormCheckbox
         label="free shipping"
         name="shipping"
-        defaultValue={shipping}
         size="checkbox-sm"
+        defaultValue={shipping}
       />
-      ;
       <button type="submit" className="btn btn-primary btn-sm ">
-        search
+        SEARCH
       </button>
       <Link to="/products" className="btn btn-accent btn-sm">
-        reset
+        RESET
       </Link>
     </Form>
   );

@@ -18,7 +18,7 @@ const FormRange = ({ label, name, size }) => {
         max={maxPrice}
         value={selectedPrice}
         onChange={(e) => setSelectedPrice(e.target.value)}
-        className={`range range-primary${size}`}
+        className={`range range-primary ${size}`}
         step={step}
       />
       <div className="w-full flex justify-between text-xs px-2 mt-2">

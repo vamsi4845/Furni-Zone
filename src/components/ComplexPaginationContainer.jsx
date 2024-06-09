@@ -7,7 +7,8 @@ const ComplexPaginationContainer = () => {
   const navigate = useNavigate();
   const handlePageChange = (pageNumber) => {
     const searchParams = new URLSearchParams(search);
-    searchParams.set(`${pathname}?${searchParams.toString()}`);
+    searchParams.set("page", pageNumber);
+    navigate(`${pathname}?${searchParams.toString()}`);
   };
   const addPageButton = ({ pageNumber, activeClass }) => {
     return (

@@ -5,17 +5,18 @@ import { useDispatch } from "react-redux";
 const CartItem = ({ cartItem }) => {
   const dispatch = useDispatch();
   const removeItemFromTheCart = () => {
-    dispatch(removeItem({ cartId }));
+    dispatch(removeItem({ cartID }));
   };
   const handleAmount = (e) => {
-    dispatch(editItem({ cartId, amount: parseInt(e.target.value) }));
+    dispatch(editItem({ cartID, amount: parseInt(e.target.value) }));
+    // console.log(e.target.value);
   };
 
-  const { cartId, title, price, image, amount, company, productColor } =
+  const { cartID, title, price, image, amount, company, productColor } =
     cartItem;
   return (
     <article
-      key={cartId}
+      key={cartID}
       className="mb-12 flex flex-col gap-y-4 sm:flex-row flex-wrap-border-b border-base-300 pb-6 last:border-b-0"
     >
       <img

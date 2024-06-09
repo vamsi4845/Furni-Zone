@@ -13,7 +13,6 @@ export const loader = (queryClient) => async () => {
 
   const products = response.data.data;
 
-  console.log(products);
   return { products };
 };
 
