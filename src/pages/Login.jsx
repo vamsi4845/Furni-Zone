@@ -32,8 +32,8 @@ const Login = () => {
   const loginAsGuestUser = async () => {
     try {
       const response = await customFetch.post("/auth/local", {
-        identifier: "test@test.com",
-        password: "secret",
+        identifier: "demo12@gmail.com",
+        password: "demo666",
       });
       dispatch(loginUser(response.data));
       toast.success("Welcome guest user");
