@@ -13,7 +13,7 @@ const allProductsQuery = (queryParams) => {
       category ?? "all",
       company ?? "all",
       sort ?? "a-z",
-      price ?? 100000,
+      price ?? 85000,
       shipping ?? false,
       page ?? 1,
     ],
