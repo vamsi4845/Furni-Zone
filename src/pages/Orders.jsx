@@ -1,5 +1,4 @@
 import { redirect, useLoaderData } from "react-router-dom";
-import { toast } from "react-toastify";
 import { customFetch } from "../utils";
 import {
   OrdersList,
@@ -30,7 +29,6 @@ export const loader =
     const user = store.getState().userState.user;
 
     if (!user) {
-      toast.warn("You must be logged in to view orders");
       return redirect("/login");
     }
 
@@ -47,7 +45,6 @@ export const loader =
       const errorMessage =
         error?.response?.data?.error?.message ||
         "there was an error accessing your orders";
-      toast.error(errorMessage);
       if (error?.response?.status === 401 || 403) return redirect("login");
       return null;
     }

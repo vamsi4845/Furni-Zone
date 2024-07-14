@@ -1,7 +1,6 @@
 import { FormInput, SubmitBtn } from "../components";
 import { Form, Link, redirect, useNavigate } from "react-router-dom";
 import { customFetch } from "../utils";
-import { toast } from "react-toastify";
 import { loginUser } from "../features/user/userSlice";
 import { useDispatch } from "react-redux";
 
@@ -14,13 +13,11 @@ export const action =
     try {
       const response = await customFetch.post("/auth/local", data);
       store.dispatch(loginUser(response.data));
-      toast.success("Logged in successfully");
       return redirect("/");
     } catch (error) {
       const errorMessage =
         error?.response?.data?.error?.message ||
         "Please double check your credentials";
-      toast.error(errorMessage);
       return null;
     }
   };
@@ -36,11 +33,9 @@ const Login = () => {
         password: "demo666",
       });
       dispatch(loginUser(response.data));
-      toast.success("Welcome guest user");
       navigate("/");
     } catch (error) {
       console.log(error);
-      toast.error("Guest user login error. please try again");
     }
   };
 
