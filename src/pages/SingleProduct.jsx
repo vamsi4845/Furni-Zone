@@ -2,9 +2,9 @@ import { useLoaderData } from "react-router-dom";
 import { formatPrice, customFetch, generateAmountOptions } from "../utils";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../features/cart/cartSlice";
-
+import { addToCompare } from "../features/compare/compareSlice";
 const singleProductQuery = (id) => {
   return {
     queryKey: ["singleProduct", id],
@@ -46,10 +46,17 @@ const SingleProduct = () => {
   };
 
   const dispatch = useDispatch();
+  const compareItems = useSelector((state) => state.compareState.compareItems);
 
   const addToCart = () => {
     dispatch(addItem({ product: cartProduct }));
   };
+
+  const addToCompareList = () => {
+    dispatch(addToCompare(product));
+  };
+
+  const isInCompareList = compareItems.some((item) => item.id === product.id);
 
   return (
     <section>
@@ -117,9 +124,18 @@ const SingleProduct = () => {
             </select>
           </div>
           {/* CART BTN */}
-          <div className="mt-10">
+          <div className="mt-10 flex gap-4">
             <button className="btn btn-secondary btn-md" onClick={addToCart}>
               ADD TO BAG
+            </button>
+            <button
+              className={`btn btn-outline btn-md ${
+                isInCompareList ? "btn-disabled" : ""
+              }`}
+              onClick={addToCompareList}
+              disabled={isInCompareList}
+            >
+              {isInCompareList ? "In Compare List" : "Add to Compare"}
             </button>
           </div>
         </div>
@@ -127,4 +143,5 @@ const SingleProduct = () => {
     </section>
   );
 };
+
 export default SingleProduct;

@@ -11,6 +11,7 @@ import {
   Login,
   Checkout,
   Orders,
+  Compare,
 } from "./pages";
 import { loader as landingLoader } from "./pages/Landing";
 import { loader as productsLoader } from "./pages/Products";
@@ -71,6 +72,11 @@ const router = createBrowserRouter([
         path: "orders",
         element: <Orders />,
         loader: ordersLoader(store, queryClient),
+      },
+      {
+        path: "compare",
+        element: <Compare />,
+        errorElement: <ErrorElement />,
       },
     ],
   },
