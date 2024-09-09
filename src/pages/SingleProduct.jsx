@@ -76,6 +76,7 @@ const SingleProduct = () => {
         <img
           src={image}
           alt={title}
+          loading="lazy"
           className="w-96 h-96 object-cover rounded-lg lg:w-full"
         />
         {/* PRODUCT */}

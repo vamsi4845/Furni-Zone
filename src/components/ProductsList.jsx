@@ -17,6 +17,7 @@ const ProductsList = () => {
             <img
               src={image}
               alt={title}
+              loading="lazy"
               className="h-24 w-24 rounded-lg sm:h-32 sm:w-32 object-cover group-hover:scale-105 transition duration-300"
             />
             <div className="ml-0 sm:ml-16">

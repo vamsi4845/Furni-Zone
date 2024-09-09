@@ -22,6 +22,7 @@ const CartItem = ({ cartItem }) => {
       <img
         src={image}
         alt={title}
+        loading="lazy"
         className="h-24 w-24 rounded-lg sm:h-32 sm:w-32 object-cover"
       />
       <div className="sm:ml-16 sm:w-48">

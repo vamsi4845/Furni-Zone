@@ -17,6 +17,7 @@ const ProductsGrid = () => {
               <img
                 src={image}
                 alt={title}
+                loading="lazy"
                 className="rounded-xl h-64 md:h-48 w-full object-cover"
               />
             </figure>
